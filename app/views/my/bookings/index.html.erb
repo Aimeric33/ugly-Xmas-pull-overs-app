@@ -1,0 +1,16 @@
+<div class="container mt-5">
+  <h1 class="text-center">Pulls loués</h1>
+  <div class="d-flex justify-content-center">
+      <ul class="cards mt-3 mb-3">
+        <% @bookings.each do |booking| %>
+          <div class="card-product">
+            <%= image_tag 'https://m.media-amazon.com/images/I/61vNm50VmFL._AC_UX679_.jpg' %>
+            <div class="card-product-infos">
+              <h2><%= link_to booking.pull.title, pull_path(booking.pull) %></h2>
+              <p>Réservé du <%= booking.start_date %> au <%= booking.end_date %></p>
+            </div>
+          </div>
+        <% end %>
+      </ul>
+  </div>
+</div>
