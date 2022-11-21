@@ -5,10 +5,11 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-
+puts 'db clean'
+User.destroy_all
 puts 'creation of users 😊'
 
-User.create!(
+charlene = User.create!(
   first_name: "Charlène",
   last_name: "Nicol",
   email: 'charln.nicol@gmail.com',
@@ -17,7 +18,7 @@ User.create!(
 
 puts '1 new user'
 
-User.create!(
+antoine = User.create!(
   first_name: "Antoine",
   last_name: "Berson",
   email: 'antoine.berson01@gmail.com',
@@ -26,7 +27,7 @@ User.create!(
 
 puts '1 new user'
 
-User.create!(
+aimeric = User.create!(
   first_name: "Aimeric",
   last_name: "Marchau",
   email: 'marchauaimeric@gmail.com',
@@ -35,7 +36,7 @@ User.create!(
 
 puts '1 new user'
 
-User.create!(
+georges = User.create!(
   first_name: "Georgy",
   last_name: "Ryssen",
   email: 'georges.ryssen@gmail.com',
@@ -48,7 +49,8 @@ puts 'users created 🔥'
 puts '___________________________'
 puts 'creation of pulls 😊'
 
-Pull.create!(
+georges_pull = Pull.create!(
+  user: georges,
   title: "Georges's pull",
   description: "it's a beautiful one",
   available: false,
@@ -58,7 +60,8 @@ Pull.create!(
 
 puts '1 new pull'
 
-Pull.create!(
+antoine_pull = Pull.create!(
+  user: antoine,
   title: "Antoine's pull",
   description: "it's a beautiful one",
   available: true,
@@ -68,7 +71,8 @@ Pull.create!(
 
 puts '1 new pull'
 
-Pull.create!(
+charlene_pull = Pull.create!(
+  user: charlene,
   title: "Charlene's pull",
   description: "it's a beautiful one",
   available: true,
@@ -78,7 +82,8 @@ Pull.create!(
 
 puts '1 new pull'
 
-Pull.create!(
+aimeric_pull = Pull.create!(
+  user: aimeric,
   title: "Aimeric's pull",
   description: "it's a beautiful one",
   available: true,
@@ -96,8 +101,8 @@ puts 'creation of bookings 😊'
 Booking.create!(
   start_date: DateTime.new(2022, 11, 10),
   end_date: DateTime.new(2022, 12, 31),
-  user_id: 1,
-  pull_id: 4
+  user: aimeric,
+  pull: antoine_pull
 )
 
 puts '1 new booking'
@@ -105,8 +110,8 @@ puts '1 new booking'
 Booking.create!(
   start_date: DateTime.new(2022, 12, 12),
   end_date: DateTime.new(2023, 2, 15),
-  user_id: 2,
-  pull_id: 3
+  user: georges,
+  pull: charlene_pull
 )
 
 puts '1 new booking'
@@ -114,8 +119,8 @@ puts '1 new booking'
 Booking.create!(
   start_date: DateTime.new(2022, 12, 23),
   end_date: DateTime.new(2023, 1, 17),
-  user_id: 3,
-  pull_id: 2
+  user: charlene,
+  pull: georges_pull
 )
 
 puts '1 new booking'
@@ -123,8 +128,8 @@ puts '1 new booking'
 Booking.create!(
   start_date: DateTime.new(2023, 12, 13),
   end_date: DateTime.new(2024, 1, 17),
-  user_id: 4,
-  pull_id: 1
+  user: antoine,
+  pull: aimeric_pull
 )
 
 puts '1 new booking'
