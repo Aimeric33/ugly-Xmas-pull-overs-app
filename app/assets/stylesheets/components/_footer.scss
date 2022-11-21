@@ -1,0 +1,15 @@
+
+.footer {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  color: $font-color;
+  text-align: left;
+  padding: 15px;
+  background-color: $back-color;
+}
+
+.footer p{
+  margin: 0px;
+}
