@@ -3,13 +3,13 @@ class BookingsController < ApplicationController
   before_action :set_user, only: [:create]
 
   def index
-    @bookings = Booking.all
+    @bookings = Booking.where(user_id: current_user)
   end
 
   def create
     @booking = Booking.new(params_booking)
     @booking.pull = @pull
-    @booking.user = @user
+    @booking.user = current_user
 
     if @booking.save
       redirect_to pull_bookings_path
