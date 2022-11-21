@@ -12,7 +12,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
 
     if @booking.save
-      redirect_to pull_bookings_path
+      redirect_to bookings_path
     else
       render "pulls/show", status: :unprocessable_entity
     end
