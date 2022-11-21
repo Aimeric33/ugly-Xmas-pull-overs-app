@@ -1,18 +1,2 @@
-<div class="container py-5" style="margin-bottom:150px">
-  <div class="row">
-    <div class="col-12 col-md-6 offset-lg-3">
-      <div class="bg-white rounded p-3 shadow">
-        <h3 class= "text-center">Add a new pull to rent</h3>
-        <%= simple_form_for @pull do |f| %>
-          <%= f.input :title, placeholder: 'Ugly pull 🎅' %>
-          <%= f.input :photo, as: :file %>
-          <%= f.input :description, placeholder: 'Describe how beautiful your pull is 😛', as: :text, input_html: {rows: 5, cols: 10} %>
-          <%= f.input :available, :collection => %w[true false] %>
-          <%= f.input :size, :collection => %w[XS S M L XL XXL] %>
-          <%= f.input :price, placeholder: 'Indicate the cost of the rent 🤑. Example : "5", "10", "32"' %>
-          <%= f.submit class: 'btn btn-primary' %>
-        <% end %>
-      </div>
-    </div>
-  </div>
-</div>
+<h1 class= "text-center mt-5">Add a new pull to rent</h1>
+<%= render 'mep-shared/pull_form', pull: @pull %>
