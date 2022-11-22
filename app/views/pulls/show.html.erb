@@ -1,9 +1,12 @@
 <div class="container">
   <div class="card-show d-flex justify-content-evenly">
     <div class="photo-pull">
-      <%# <%= cl_image_tag @article.photo.key, height: 300, width: 400, crop: :fill %>
+      <% if @pull.photo&.attached? %>
+        <%= cl_image_tag @pull.photo.key, height: 300, width: 400, crop: :fill %>
+        <% else %>
+        <%= image_tag("#{@pull.user.first_name.capitalize}.png") %>
+      <% end %>
     </div>
-
     <div class="infos-pull">
       <div class="title-h1 d-flex justify-content-between">
         <div class="title-pull m-3">
