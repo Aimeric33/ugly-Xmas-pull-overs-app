@@ -5,16 +5,13 @@
 // }
 .card-product {
   overflow: hidden;
-  height: 50%;
-  width: 30%;
   background: $back-color;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   display: flex;
-  align-items: left;
   flex-direction: column;
   border-radius: 10px;
-  margin: 10px auto;
+  margin: 10px 10px;
 }
 
 .card-product img {
@@ -39,4 +36,5 @@
 
 .card-product .card-product-infos {
   padding: 16px;
+  text-align: center;
 }
