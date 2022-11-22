@@ -11,7 +11,7 @@ puts 'creation of users 😊'
 User.create!(
   first_name: "Charlène",
   last_name: "Nicol",
-  email: 'chrln.nicol@gmail.com',
+  email: 'charln.nicol@gmail.com',
   password: 'azerty'
 )
 
