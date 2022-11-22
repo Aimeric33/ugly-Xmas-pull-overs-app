@@ -129,5 +129,5 @@ Booking.create!(
 
 puts '1 new booking'
 
-puts 'pulls created 🔥'
+puts 'bookings created 🔥'
 puts '___________________________'
