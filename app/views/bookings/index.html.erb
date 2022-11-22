@@ -1,14 +1,16 @@
 <div class="container mt-5">
-  <div class="row justify-content-center">
-    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-      <h1 class="text-center">Pulls loués</h1>
-      <ul class="list-item mb-3">
+  <h1 class="text-center">Pulls loués</h1>
+  <div class="d-flex justify-content-center">
+      <ul class="cards mt-3 mb-3">
         <% @bookings.each do |booking| %>
-          <li class="list-group-item">
-            <%= link_to booking.pull.name, pull_path(booking.pull) %>, réservé du <%= booking.start_date %> au <%= booking.end_date %>
-          </li>
+          <div class="card-product">
+            <%= image_tag 'https://m.media-amazon.com/images/I/61vNm50VmFL._AC_UX679_.jpg' %>
+            <div class="card-product-infos">
+              <h2><%= link_to booking.pull.title, pull_path(booking.pull) %></h2>
+              <p>Réservé du <%= booking.start_date %> au <%= booking.end_date %></p>
+            </div>
+          </div>
         <% end %>
       </ul>
-    </div>
   </div>
 </div>
