@@ -3,8 +3,12 @@
   <div class="cards">
     <% @pulls.each do |pull| %>
       <div class="card-product">
+      <% if pull.photo.attached? %>
         <%= cl_image_tag pull.photo.key, height: 300, width: 400, crop: :fill %>
-        <%# <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" style="width:100%"/> %>
+        <% else %>
+        <img src="app/assets/images/Antoine.jpeg" style="width:100%"/>
+      <% end %>
+      <% raise %>
         <div class="card-product-infos">
           <h2><%= pull.title %></h2>
           <p><%= pull.description %></p>
