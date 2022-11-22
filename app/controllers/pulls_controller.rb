@@ -40,7 +40,7 @@ class PullsController < ApplicationController
   private
 
   def pull_params
-    params.require(:pull).permit(:title, :description, :size, :price)
+    params.require(:pull).permit(:title, :description, :size, :price, :photo)
   end
 
   def set_pull
