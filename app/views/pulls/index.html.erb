@@ -8,11 +8,17 @@
         <% else %>
         <%= image_tag("#{pull.user.first_name.capitalize}.png") %>
       <% end %>
+      <%= link_to pull_path(pull) do %>
         <div class="card-product-infos">
-          <h2><%= link_to pull.title, pull_path(pull) %></h2>
+          <h2><%= pull.title %></h2>
           <p><%= pull.description %></p>
         </div>
+      <% end %>
       </div>
     <% end %>
   </div>
 </div>
+
+
+
+  <%# <%= link_to pull.title, pull_path(pull) %>
