@@ -9,5 +9,5 @@ class Pull < ApplicationRecord
   validates :description, presence: true
   validates :size, presence: true, inclusion: { in: SIZES }
   validates :price, presence: true
-  validates :photo, presence: true
+  # validates :photo, presence: true
 end

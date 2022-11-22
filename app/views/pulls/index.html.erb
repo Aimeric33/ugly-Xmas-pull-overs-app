@@ -3,8 +3,11 @@
   <div class="cards">
     <% @pulls.each do |pull| %>
       <div class="card-product">
+      <% if pull.photo&.attached? %>
         <%= cl_image_tag pull.photo.key, height: 300, width: 400, crop: :fill %>
-        <%# <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" style="width:100%"/> %>
+        <% else %>
+        <%= image_tag("#{pull.user.first_name.capitalize}.png") %>
+      <% end %>
         <div class="card-product-infos">
           <h2><%= link_to pull.title, pull_path(pull) %></h2>
           <p><%= pull.description %></p>
