@@ -1,8 +1,8 @@
 class Pull < ApplicationRecord
   SIZES = ["XS", "S", "M", "L", "XL", "XXL"]
 
-  has_many :bookings
-  has_many :users, through: :bookings
+  has_many :bookings, dependent: :destroy
+  belongs_to :user
   has_one_attached :photo
 
   validates :title, presence: true
