@@ -15,7 +15,7 @@ User.create!(
   password: 'azerty'
 )
 
-puts "#{User[id: 1].first_name} has been created"
+puts '1 new user'
 
 User.create!(
   first_name: "Antoine",
@@ -24,6 +24,8 @@ User.create!(
   password: 'azerty'
 )
 
+puts '1 new user'
+
 User.create!(
   first_name: "Aimeric",
   last_name: "Marchau",
@@ -31,12 +33,16 @@ User.create!(
   password: 'azerty'
 )
 
+puts '1 new user'
+
 User.create!(
   first_name: "Georgy",
   last_name: "Ryssen",
   email: 'georges.ryssen@gmail.com',
   password: 'azerty'
 )
+
+puts '1 new user'
 
 puts 'users created 🔥'
 puts '___________________________'
@@ -50,6 +56,8 @@ Pull.create!(
   price: 42
 )
 
+puts '1 new pull'
+
 Pull.create!(
   title: "Antoine's pull",
   description: "it's a beautiful one",
@@ -57,6 +65,8 @@ Pull.create!(
   size: "L",
   price: 56
 )
+
+puts '1 new pull'
 
 Pull.create!(
   title: "Charlene's pull",
@@ -66,6 +76,8 @@ Pull.create!(
   price: 36
 )
 
+puts '1 new pull'
+
 Pull.create!(
   title: "Aimeric's pull",
   description: "it's a beautiful one",
@@ -74,5 +86,48 @@ Pull.create!(
   price: 39
 )
 
+puts '1 new pull'
+
 puts 'pulls created 🔥'
+puts '___________________________'
+
+puts 'creation of bookings 😊'
+
+Booking.create!(
+  start_date: DateTime.new(2022, 11, 10),
+  end_date: DateTime.new(2022, 12, 31),
+  user_id: 1,
+  pull_id: 4
+)
+
+puts '1 new booking'
+
+Booking.create!(
+  start_date: DateTime.new(2022, 12, 12),
+  end_date: DateTime.new(2023, 2, 15),
+  user_id: 2,
+  pull_id: 3
+)
+
+puts '1 new booking'
+
+Booking.create!(
+  start_date: DateTime.new(2022, 12, 23),
+  end_date: DateTime.new(2023, 1, 17),
+  user_id: 3,
+  pull_id: 2
+)
+
+puts '1 new booking'
+
+Booking.create!(
+  start_date: DateTime.new(2023, 12, 13),
+  end_date: DateTime.new(2024, 1, 17),
+  user_id: 4,
+  pull_id: 1
+)
+
+puts '1 new booking'
+
+puts 'bookings created 🔥'
 puts '___________________________'
