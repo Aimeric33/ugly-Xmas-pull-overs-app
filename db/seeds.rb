@@ -15,6 +15,8 @@ User.create!(
   password: 'azerty'
 )
 
+puts "#{User[id: 1].first_name} has been created"
+
 User.create!(
   first_name: "Antoine",
   last_name: "Berson",
