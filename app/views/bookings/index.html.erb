@@ -1,12 +1,11 @@
-
-<div class="container">
-  <div class="row">
+<div class="container mt-5">
+  <div class="row justify-content-center">
     <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-      <h1>My bookings</h1>
-      <ul class="list-group mb-3">
+      <h1 class="text-center">Pulls loués</h1>
+      <ul class="list-item mb-3">
         <% @bookings.each do |booking| %>
           <li class="list-group-item">
-            <%= link_to booking.pull.name, pull_path %>, réservé du <%= booking.start_date %> au <%= booking.end_date %>
+            <%= link_to booking.pull.name, pull_path(booking.pull) %>, réservé du <%= booking.start_date %> au <%= booking.end_date %>
           </li>
         <% end %>
       </ul>
