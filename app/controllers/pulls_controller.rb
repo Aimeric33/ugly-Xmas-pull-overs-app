@@ -1,5 +1,6 @@
 class PullsController < ApplicationController
   before_action :set_pull, only: %i[show edit update destroy]
+  skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
     @pulls = Pull.all
