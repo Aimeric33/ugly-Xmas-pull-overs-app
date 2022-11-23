@@ -60,7 +60,7 @@ georges_pull = Pull.new(
   description: "it's a beautiful one",
   available: false,
   size: "XL",
-  price: 42
+  price: 3
 )
 
 georges_pull.photo.attach(io: file_gr, filename: "georgy.png", content_type: "image/png")
@@ -76,7 +76,7 @@ antoine_pull = Pull.new(
   description: "it's a beautiful one",
   available: true,
   size: "L",
-  price: 56
+  price: 4
 )
 
 antoine_pull.photo.attach(io: file_ab, filename: "antoine.png", content_type: "image/png")
@@ -92,7 +92,7 @@ charlene_pull = Pull.new(
   description: "it's a beautiful one",
   available: true,
   size: "XS",
-  price: 36
+  price: 8
 )
 
 charlene_pull.photo.attach(io: file_cn, filename: "charlene.png", content_type: "image/png")
@@ -108,7 +108,7 @@ aimeric_pull = Pull.new(
   description: "it's a beautiful one",
   available: true,
   size: "S",
-  price: 39
+  price: 3
 )
 
 aimeric_pull.photo.attach(io: file_am, filename: "aimeric.png", content_type: "image/png")

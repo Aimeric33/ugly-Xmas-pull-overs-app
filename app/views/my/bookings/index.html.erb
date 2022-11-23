@@ -1,13 +1,15 @@
 <div class="container mt-5">
-  <h1 class="text-center">Pulls loués</h1>
+  <h1 class="text-center title">Mes pulls loués</h1>
   <div class="container">
     <div class="cards">
       <% @bookings.each do |booking| %>
         <div class="card-product">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" style="width:100%"/>
+          <%= cl_image_tag booking.pull.photo.key, height: 300, width: 400, crop: :fill %>
           <div class="card-product-infos">
-            <h2><%= booking.pull.title %></h2>
+            <h2><%= link_to booking.pull.title, pull_path(booking.pull) %></h2>
             <p>Réservé du <%= booking.start_date %> au <%= booking.end_date %></p>
+            <p>Votre pull a été loué <b><%= (booking.end_date - booking.start_date).to_i %></b> jours à <%= booking.pull.price %>€ par jour</p>
+            <h5>Vous avez gagné <%= (booking.pull.price * (booking.end_date - booking.start_date)).to_i %>€!</h5>
           </div>
         </div>
       <% end %>
