@@ -1,12 +1,12 @@
-<h1 class="text-center mt-5">Pulls loués</h1>
-<div class="container">
+<div class="container mt-5">
+  <h1 class="text-center title">Les pulls que je loue</h1>
   <div class="container">
     <div class="cards">
       <% @bookings.each do |booking| %>
         <div class="card-product">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" style="width:100%"/>
+          <%= cl_image_tag booking.pull.photo.key, height: 300, width: 400, crop: :fill %>
           <div class="card-product-infos">
-            <h2><%= booking.pull.title %></h2>
+            <h2><%= link_to booking.pull.title, pull_path(booking.pull) %></h2>
             <p>Réservé du <%= booking.start_date %> au <%= booking.end_date %></p>
           </div>
         </div>
