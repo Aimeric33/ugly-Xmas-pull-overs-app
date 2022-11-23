@@ -1,7 +1,7 @@
 <div class="container">
   <div class="card-show d-flex justify-content-evenly align-items-center">
     <%# photo pull %>
-    <%= cl_image_tag @pull.photo.key, height: 300, width: 400, crop: :fill %>
+    <%= cl_image_tag @pull.photo.key %>
     <%# info sur le pull %>
     <div class="infos-pull">
       <div class="title-h1 d-flex justify-content-between">
