@@ -17,6 +17,11 @@ class BookingsController < ApplicationController
     end
   end
 
+  def gain
+    amount = (self.end_date - self.start_date).to_i * self.pull.price
+    return amount
+  end
+
   private
 
   def params_booking
@@ -27,9 +32,3 @@ class BookingsController < ApplicationController
     @pull = Pull.find(params[:pull_id])
   end
 end
-
-# je n'arrive pas à faire fonctionner cette méthode sur une instance de Booking
-# def gain
-#   amount = (self.end_date - self.start_date).to_i * self.pull.price
-#   return amount
-# end
