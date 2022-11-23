@@ -15,6 +15,7 @@
 
 .container-fluid {
   align-content: center;
+  padding-left: 0;
 }
 
 .nav-link {
@@ -27,4 +28,8 @@
 
 .avatar {
   box-shadow: 1px 1px 8px 1px #497174;
+}
+
+.logo {
+  width: 150px;
 }
