@@ -3,23 +3,29 @@
     <div class="photo-pull">
         <%= cl_image_tag @pull.photo.key, height: 300, width: 400, crop: :fill %>
     </div>
+    <%# info sur le pull %>
     <div class="infos-pull">
       <div class="title-h1 d-flex justify-content-between">
         <div class="title-pull m-3">
           <h1><%= @pull.title %></h1>
         </div>
+        <%# titre et taille du pull %>
         <div class="title-size m-3">
           <h1><%= @pull.size %></h1>
         </div>
       </div>
+      <%# description du pull %>
       <div class="description m-3">
         <p><%= @pull.description %></p>
       </div>
-      <div class="d-flex justify-content-end m-3">
-        <div class="price me-5">
-          <h2><%= @pull.price.round %>€</h2>
-        </div>
-        <%= link_to "Louer ce pull", pull_bookings_path(@pull) , class: "btn-grey" %>
+      <%# form avec prix pour les dates de réservation e%>
+      <div class="m-3">
+        <%= simple_form_for [@pull, @booking] do |f| %>
+          <%= f.input :start_date, html5: true %>
+          <%= f.input :end_date, html5: true %>
+          <h2 class= "d-flex justify-content-end"><%= @pull.price.round %>€</h2>
+          <div class= "d-flex justify-content-end"><%= f.submit class: "btn-grey"%></div>
+        <% end %>
       </div>
     </div>
   </div>
