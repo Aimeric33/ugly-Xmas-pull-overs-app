@@ -4,7 +4,7 @@
     <div class="cards">
       <% @bookings.each do |booking| %>
         <div class="card-product">
-          <%= cl_image_tag booking.pull.photo.key %>
+          <%= cl_image_tag booking.pull.photo.key, height: 300, width: 400, crop: :pad %>
           <div class="card-product-infos">
             <h2><%= link_to booking.pull.title, pull_path(booking.pull) %></h2>
             <p>Réservé du <%= booking.start_date %> au <%= booking.end_date %></p>
