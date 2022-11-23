@@ -1,14 +1,16 @@
 <h1 class="title"><strong>Winter is coming...</strong></h1>
 <div class="container">
-  <div class="cards">
+  <div class="cards_home">
     <% @pulls.each do |pull| %>
-      <div class="card-product">
-        <%= cl_image_tag pull.photo.key, height: 300, width: 400, crop: :fill %>
-        <div class="card-product-infos">
-          <h2><%= link_to pull.title, pull_path(pull) %></h2>
-          <p><%= pull.description %></p>
-        </div>
-      </div>
+      <div class="card-product-home">
+        <%= link_to pull_path(pull) do %>
+         <%= cl_image_tag pull.photo.key, height: 300, width: 400, crop: :fill %>
+           <div class="card-product-infos">
+            <h2><%= pull.title %></h2>
+            <p><%= pull.description %></p>
+          </div>
+        <% end %>
+       </div>
     <% end %>
   </div>
 </div>
