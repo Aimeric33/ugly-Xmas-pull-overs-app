@@ -4,13 +4,13 @@
     <% @pulls.each do |pull| %>
       <div class="card-product-home">
         <%= link_to pull_path(pull) do %>
-         <%= cl_image_tag pull.photo.key, height: 300, width: 400, crop: :fill %>
-           <div class="card-product-infos">
+          <%= cl_image_tag pull.photo.key, height: 300, width: 400, crop: :fill %>
+          <div class="card-product-infos">
             <h2><%= pull.title %></h2>
             <p><%= pull.description %></p>
           </div>
         <% end %>
-       </div>
+      </div>
     <% end %>
   </div>
 </div>
