@@ -4,7 +4,7 @@
     <div class="cards">
       <% @pulls.each do |pull| %>
         <div class="card-product">
-          <%= cl_image_tag pull.photo.key %>
+          <%= cl_image_tag pull.photo.key, height: 300, width: 400, crop: :pad %>
           <div class="card-product-infos">
             <h2><%= link_to pull.title, pull_path(pull) %></h2>
             <p><%= pull.description %></p>
