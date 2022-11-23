@@ -8,6 +8,8 @@
           <div class="card-product-infos">
             <h2><%= link_to booking.pull.title, pull_path(booking.pull) %></h2>
             <p>Réservé du <%= booking.start_date %> au <%= booking.end_date %></p>
+            <p>Votre pull a été loué <b><%= (booking.end_date - booking.start_date).to_i %></b> jours à <%= booking.pull.price %>€ par jour</p>
+            <h5>Vous avez gagné <%= (booking.pull.price * (booking.end_date - booking.start_date)).to_i %>€!</h5>
           </div>
         </div>
       <% end %>
