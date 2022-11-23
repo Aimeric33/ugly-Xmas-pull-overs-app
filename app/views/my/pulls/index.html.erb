@@ -6,7 +6,7 @@
         <div class="card-product">
           <%= cl_image_tag pull.photo.key, height: 300, width: 400, crop: :fill %>
           <div class="card-product-infos">
-            <h2><%= pull.title %></h2>
+            <h2><%= link_to pull.title, pull_path(pull) %></h2>
             <p><%= pull.description %></p>
             <p>Prix: <%= pull.price %>€ / Taille: <%= pull.size %></p>
             <div class="d-flex justify-content-center m-3">
