@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+require "open-uri"
+
 puts 'db clean'
 User.destroy_all
 puts 'creation of users 😊'
@@ -50,7 +52,9 @@ puts 'users created 🔥'
 puts '___________________________'
 puts 'creation of pulls 😊'
 
-georges_pull = Pull.create!(
+file_gr = URI.open("https://res.cloudinary.com/dey9mpa39/image/upload/v1669198426/georgy_ope6kg.png")
+
+georges_pull = Pull.new(
   user: georges,
   title: "Georges's pull",
   description: "it's a beautiful one",
@@ -59,9 +63,14 @@ georges_pull = Pull.create!(
   price: 42
 )
 
+georges_pull.photo.attach(io: file_gr, filename: "georgy.png", content_type: "image/png")
+georges_pull.save
+
 puts '1 new pull'
 
-antoine_pull = Pull.create!(
+file_ab = URI.open("https://res.cloudinary.com/dey9mpa39/image/upload/v1669198426/antoine_qpnymz.png")
+
+antoine_pull = Pull.new(
   user: antoine,
   title: "Antoine's pull",
   description: "it's a beautiful one",
@@ -70,9 +79,14 @@ antoine_pull = Pull.create!(
   price: 56
 )
 
+antoine_pull.photo.attach(io: file_ab, filename: "antoine.png", content_type: "image/png")
+antoine_pull.save
+
 puts '1 new pull'
 
-charlene_pull = Pull.create!(
+file_cn = URI.open("https://res.cloudinary.com/dey9mpa39/image/upload/v1669198426/charlene_x1yttm.png")
+
+charlene_pull = Pull.new(
   user: charlene,
   title: "Charlene's pull",
   description: "it's a beautiful one",
@@ -81,9 +95,14 @@ charlene_pull = Pull.create!(
   price: 36
 )
 
+charlene_pull.photo.attach(io: file_cn, filename: "charlene.png", content_type: "image/png")
+charlene_pull.save
+
 puts '1 new pull'
 
-aimeric_pull = Pull.create!(
+file_am = URI.open("https://res.cloudinary.com/dey9mpa39/image/upload/v1669198426/aimeric_kyoe3w.png")
+
+aimeric_pull = Pull.new(
   user: aimeric,
   title: "Aimeric's pull",
   description: "it's a beautiful one",
@@ -91,6 +110,9 @@ aimeric_pull = Pull.create!(
   size: "S",
   price: 39
 )
+
+aimeric_pull.photo.attach(io: file_am, filename: "aimeric.png", content_type: "image/png")
+aimeric_pull.save
 
 puts '1 new pull'
 
