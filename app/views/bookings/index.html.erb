@@ -1,5 +1,5 @@
 <div class="container mt-5">
-  <h1 class="text-center title">Les pulls que je loue</h1>
+  <h1 class="text-center title">Mes achats</h1>
   <div class="container">
     <div class="cards">
       <% @bookings.each do |booking| %>
@@ -8,6 +8,8 @@
           <div class="card-product-infos">
             <h2><%= link_to booking.pull.title, pull_path(booking.pull) %></h2>
             <p>Réservé du <%= booking.start_date %> au <%= booking.end_date %></p>
+            <p>Vous avez loué ce pull <b><%= (booking.end_date - booking.start_date).to_i %></b> jours à <%= booking.pull.price %>€ par jour</p>
+            <h5 style="color:red">Vous avez payé <%= (booking.pull.price * (booking.end_date - booking.start_date)).to_i %>€!</h5>
           </div>
         </div>
       <% end %>
