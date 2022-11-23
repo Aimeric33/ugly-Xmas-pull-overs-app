@@ -4,3 +4,9 @@
   right: 16px;
   z-index: 1000;
 }
+
+.custom-alert{
+  .modal-header{
+    color: red
+  }
+}
