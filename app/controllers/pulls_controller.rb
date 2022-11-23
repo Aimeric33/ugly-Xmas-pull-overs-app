@@ -12,6 +12,7 @@ class PullsController < ApplicationController
 
   def create
     @pull = Pull.new(pull_params)
+    @pull.user = current_user
     @pull.available = true
     if @pull.save
       redirect_to pull_path(@pull)
