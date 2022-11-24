@@ -16,13 +16,13 @@ html {
   box-sizing: border-box;
 }
 
-body {
+.page {
   position: relative;
-  min-height: 100%;
-  padding-bottom: 100px;
+  min-height: 100vh;
+  // padding-bottom: 100px;
 }
 
-body::after {
+.page::after {
   content: "";
   background: url(https://media.istockphoto.com/id/1162988429/vector/ugly-sweater-merry-christmas-ornament-scandinavian-style-knitted-background-seamless-frame.jpg?s=170667a&w=0&k=20&c=tAKmHnubpAzvlaDaABdx-F5VbvGDrbBLE6BsFkrrnGU=);
   opacity: 0.6;
