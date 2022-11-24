@@ -11,12 +11,10 @@
   </head>
 
   <body>
-    <div class="page">
-      <%= render "mep-shared/navbar" %>
-      <%= yield %>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-    </div>
-      <%= render "mep-shared/footer" %>
+    <%= render "mep-shared/navbar" %>
+    <%= yield %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <%= render "mep-shared/footer" %>
   </body>
 </html>
