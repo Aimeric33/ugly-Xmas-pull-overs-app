@@ -1,7 +1,7 @@
-<%= form_with url: root_path, method: :get, class: "d-flex" do %>
+<%= form_with url: pulls_path, method: :get, class: "d-flex" do %>
   <%= text_field_tag :query,
     params[:query],
     class: "form-control mx-2",
-    placeholder: "Trouver un pull" %>
-  <%= submit_tag "Rechercher", class: "btn-grey btn-primary" %>
+    placeholder: "Quel pull veux tu ?" %>
+  <%= submit_tag "Trouve le pour moi !", class: "btn-grey btn-primary" %>
 <% end %>

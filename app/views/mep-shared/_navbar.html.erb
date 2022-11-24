@@ -9,18 +9,15 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to "Accueil", pulls_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Ajouter un pull", new_pull_path, class: "nav-link" %>
+          <li class="nav-item active" style='margin-right:30px'>
+            <%= link_to "Voir tous les pulls", pulls_path, class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
             <%= image_tag "the_grinch.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Voir tous les pulls", pulls_path , class: "dropdown-item" %>
               <%= link_to "Mes ventes", my_bookings_path, class: "dropdown-item" %>
               <%= link_to "Mes pulls", my_pulls_path, class: "dropdown-item" %>
+              <%= link_to "Ajouter un pull", new_pull_path, class: "dropdown-item" %>
               <%= link_to "Déconnexion", destroy_user_session_path , data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
           </li>
