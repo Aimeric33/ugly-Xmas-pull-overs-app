@@ -6,7 +6,7 @@
         <%= image_tag "the_grinch.png", class: "avatar dropdown-toggle ms-2", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
     <% if user_signed_in? %>
         <div class="dropdown-menu dropdown-menu" aria-labelledby="navbarDropdown">
-          <%= link_to "Accueil", root_path , class: "dropdown-item" %>
+          <%= link_to "Voir tous les pulls", pulls_path , class: "dropdown-item" %>
           <%= link_to "Mes ventes", my_bookings_path, class: "dropdown-item" %>
           <%= link_to "Mes pulls", my_pulls_path, class: "dropdown-item" %>
         </div>
