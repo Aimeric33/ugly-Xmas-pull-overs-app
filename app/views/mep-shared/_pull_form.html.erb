@@ -1,14 +1,14 @@
 <div class="container py-5">
   <div class="row">
     <div class="col-12 col-md-6 offset-lg-3">
-      <div class="card-show p-3 shadow-none">
+      <div class="card-create p-3 shadow-none">
         <%= simple_form_for pull do |f| %>
-          <%= f.input :title, placeholder: 'Pull de Noël dino 🦖 🎅' %>
-          <%= f.input :photo, as: :file %>
-          <%= f.input :description, placeholder: 'Décrivez à quel point votre pull est fantastique 😛', as: :text, input_html: {rows: 5, cols: 10} %>
-          <%= f.input :size, as: :radio_buttons, :collection => Pull::SIZES, wrapper: :vertical_collection_inline %>
-          <%= f.input :price, placeholder: 'Prix de location de votre superbe pull 🤑. Example : "5", "10", "32"' %>
-          <%= f.submit class: 'btn btn-grey' %>
+          <%= f.input :title, label: "Titre de l'annonce", placeholder: 'Pull de Noël dino 🦖 🎅' %>
+          <%= f.input :photo, label: "Ajoute une photo de ton pull", as: :file %>
+          <%= f.input :description, label: "Ajoute des détails sur ton pull", placeholder: 'Décrivez à quel point votre pull est fantastique 😛', as: :text, input_html: {rows: 5, cols: 10} %>
+          <%= f.input :size, label: "Taille de ton pull", as: :radio_buttons, :collection => Pull::SIZES, wrapper: :vertical_collection_inline %>
+          <%= f.input :price, label: "Prix par jour de location", placeholder: 'Prix de location de votre superbe pull 🤑. Example : "5", "10", "32"' %>
+          <%= f.submit "Créer mon pull !", class: 'btn btn-grey' %>
         <% end %>
       </div>
     </div>

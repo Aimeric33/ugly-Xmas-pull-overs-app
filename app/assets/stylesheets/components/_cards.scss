@@ -67,3 +67,22 @@
     padding: 40px;
   }
 }
+
+.card-create {
+  border-radius: 8px;
+  background-color: #FFFFFF;
+  border: 2px solid black;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+  padding: 2rem;
+  img {
+    padding: 15px;
+    object-fit: cover;
+    width: 50%;
+    height: 100%;
+  }
+
+  infos-pull {
+    width: 50%;
+    padding: 40px;
+  }
+}
