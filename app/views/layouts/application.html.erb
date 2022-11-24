@@ -14,8 +14,7 @@
   <body>
     <%= render "mep-shared/navbar" %>
     <%= yield %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <%= render "mep-shared/flash_messages" %>
     <%= render "mep-shared/footer" %>
   </body>
 </html>
