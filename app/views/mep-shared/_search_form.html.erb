@@ -1,0 +1,7 @@
+<%= form_with url: root_path, method: :get, class: "d-flex" do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control mx-2",
+    placeholder: "Find a pull" %>
+  <%= submit_tag "Search", class: "btn-grey btn-primary" %>
+<% end %>

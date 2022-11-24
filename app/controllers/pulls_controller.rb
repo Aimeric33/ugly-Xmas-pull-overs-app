@@ -3,7 +3,18 @@ class PullsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
-    @pulls = Pull.all
+    if params[:query].present?
+      sql_query = <<~SQL
+        pulls.title @@ :query
+        OR pulls.description @@ :query
+        OR pulls.size @@ :query
+        OR users.first_name @@ :query
+        OR users.last_name @@ :query
+      SQL
+      @pulls = Pull.joins(:user).where(sql_query, query: "%#{params[:query]}%")
+    else
+      @pulls = Pull.all
+    end
   end
 
   def new
