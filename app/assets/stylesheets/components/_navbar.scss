@@ -1,8 +1,9 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: #B8C7C8;
+  background: #FFFFFF;
   max-height: 20vh;
-  // box-shadow: 0px 6px 5px 1px rgb(198, 198, 198);
+  box-shadow: 0px 3px 5px 1px rgb(198, 198, 198);
+  border-bottom: 2px solid black;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -19,7 +20,7 @@
 }
 
 .nav-link {
-  color: #497174;
+  color: #104B29;
 }
 
 .nav-link:hover {
@@ -27,7 +28,7 @@
 }
 
 .avatar {
-  box-shadow: 1px 1px 8px 1px #497174;
+  box-shadow: 1px 1px 8px 1px #104B29;
 }
 
 .logo {
