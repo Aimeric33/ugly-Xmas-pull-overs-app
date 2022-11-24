@@ -21,13 +21,17 @@
         <p><b>Prix : </b><%= '%.2f' % @pull.price.round %> € par jour</p>
       </div>
       <%# form avec prix pour les dates de réservation e%>
-      <div class="form-show">
-        <%= simple_form_for [@pull, @booking] do |f| %>
-          <%= f.input :start_date, html5: true, label: 'Début de la location' %>
-          <%= f.input :end_date, html5: true, label: 'Fin de la location' %>
-          <div class= "d-flex justify-content-end" style="margin-top:2rem;"><%= f.submit 'Confirmer ma réservation', class: "btn-grey btn"%></div>
-        <% end %>
-      </div>
+      <% if user_signed_in? %>
+        <div class="form-show">
+          <%= simple_form_for [@pull, @booking] do |f| %>
+            <%= f.input :start_date, html5: true, label: 'Début de la location' %>
+            <%= f.input :end_date, html5: true, label: 'Fin de la location' %>
+            <div class= "d-flex justify-content-end" style="margin-top:2rem;"><%= f.submit 'Confirmer ma réservation', class: "btn-grey btn"%></div>
+          <% end %>
+        </div>
+      <% else %>
+      <%= link_to "Connecte toi pour louer ce pull !", new_user_session_path, class: "btn btn-grey btn-booking" %>
+      <% end %>
     </div>
   </div>
 </div>

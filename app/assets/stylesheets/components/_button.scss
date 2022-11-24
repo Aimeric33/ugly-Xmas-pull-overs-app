@@ -9,8 +9,34 @@
   border: 2px solid black;
 }
 
+.btn-red {
+  color: #EFF5F5;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #b50101;
+  transition: 0.5s ease;
+  text-decoration: none;
+  box-shadow: 2px 2px 2px #dddddd;
+  border: 2px solid black;
+}
+
+.btn-booking {
+  margin-top: 4rem;
+  font-weight: 700;
+  letter-spacing: .05rem;
+  display:block;
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
+
 .btn-grey:hover{
   background: #EFF5F5;
   color: #104B29;
   border: 2px solid #104B29;
+}
+
+.btn-red:hover{
+  background: #EFF5F5;
+  color: #b50101;
+  border: 2px solid #b50101;
 }
