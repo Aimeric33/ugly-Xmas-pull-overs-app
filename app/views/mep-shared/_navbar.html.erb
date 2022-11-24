@@ -1,39 +1,36 @@
+
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-          <%= link_to root_path , class: "text-decoration-none" do %>
-            <%= image_tag "logo-cropped.svg", class: "logo ms-2" %>
-          <% end %>
   <div class="container-fluid">
-        <%= image_tag "the_grinch.png", class: "avatar dropdown-toggle ms-2", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-    <% if user_signed_in? %>
-        <div class="dropdown-menu dropdown-menu" aria-labelledby="navbarDropdown">
-          <%= link_to "Accueil", root_path , class: "dropdown-item" %>
-          <%= link_to "Mes ventes", my_bookings_path, class: "dropdown-item" %>
-          <%= link_to "Mes pulls", my_pulls_path, class: "dropdown-item" %>
-        </div>
+    <%= render "mep-shared/search_form" %>
+    <%# logo %>
+    <%= link_to root_path, class: "navbar-brand position-absolute top-50 start-50 translate-middle" do %>
+      <%= image_tag "Ugly.png" %>
+    <% end %>
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto">
-            <li class="nav-item active">
-              <%= link_to "Mes achats", bookings_path, class: "nav-link" %>
-            </li>
-            <li class="nav-item active">
-              <%= link_to "Ajouter un pull", new_pull_path, class: "nav-link" %>
-            </li>
-            <div class="nav-item p-1 me-2">
-              <li><%= link_to "Déconnexion", destroy_user_session_path , data: {turbo_method: :delete}, class: "btn-grey" %></li>
+      <ul class="navbar-nav me-auto">
+        <% if user_signed_in? %>
+          <li class="nav-item active">
+            <%= link_to "Home", root_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Ajouter un pull", new_pull_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item dropdown">
+            <%= image_tag "the_grinch.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <%= link_to "Accueil", root_path , class: "dropdown-item" %>
+              <%= link_to "Mes ventes", my_bookings_path, class: "dropdown-item" %>
+              <%= link_to "Mes pulls", my_pulls_path, class: "dropdown-item" %>
+              <%= link_to "Déconnexion", destroy_user_session_path , data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
-        </ul>
+          </li>
         <% else %>
-        <div class="nav-item d-flex flex-row">
-          <ul class="list-unstyled nav-item d-flex flex-row m-0">
-            <div class="nav-item p-1 me-2">
-              <li><%= link_to "Accueil", root_path , class: "nav-link" %></li>
-            </div>
-            <div class="nav-item p-1 me-2">
-              <li><%= link_to "Connexion", new_user_session_path, class: "btn-grey" %></li>
-            </div>
-          </ul>
-          </div>
+          <li class="nav-item" >
+            <%= link_to "Connexion", new_user_session_path, class: "btn-grey" %>
+          </li>
         <% end %>
+      </ul>
     </div>
   </div>
 </div>
