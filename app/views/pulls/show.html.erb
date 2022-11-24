@@ -1,29 +1,31 @@
 <div class="container">
   <div class="card-show d-flex justify-content-evenly align-items-center">
     <%# photo pull %>
-    <%= cl_image_tag @pull.photo.key, height: 300, width: 400, crop: :pad %>
+    <%= cl_image_tag @pull.photo.key, height: 300, width: 400, style: 'width:50%; padding:40px', crop: :pad %>
     <%# info sur le pull %>
     <div class="infos-pull">
       <div class="title-h1 d-flex justify-content-between">
         <div class="title-pull m-3">
-          <h1><%= @pull.title %></h1>
+          <h1><%= @pull.title.capitalize %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 🎅</h1>
         </div>
         <%# titre et taille du pull %>
-        <div class="title-size m-3">
-          <h1><%= @pull.size %></h1>
-        </div>
       </div>
       <%# description du pull %>
       <div class="description m-3">
-        <p><%= @pull.description %></p>
+        <p><b>Taille : </b><%= @pull.size %></p>
+      </div>
+      <div class="description m-3">
+        <p><b>Description : </b><%= @pull.description %></p>
+      </div>
+      <div class="description m-3">
+        <p><b>Prix : </b><%= '%.2f' % @pull.price.round %> € par jour</p>
       </div>
       <%# form avec prix pour les dates de réservation e%>
-      <div class="m-3">
+      <div class="form-show">
         <%= simple_form_for [@pull, @booking] do |f| %>
-          <%= f.input :start_date, html5: true %>
-          <%= f.input :end_date, html5: true %>
-          <h2 class= "d-flex justify-content-end"><%= @pull.price.round %>€</h2>
-          <div class= "d-flex justify-content-end"><%= f.submit class: "btn-grey btn"%></div>
+          <%= f.input :start_date, html5: true, label: 'Début de la location' %>
+          <%= f.input :end_date, html5: true, label: 'Fin de la location' %>
+          <div class= "d-flex justify-content-end" style="margin-top:2rem;"><%= f.submit 'Confirmer ma réservation', class: "btn-grey btn"%></div>
         <% end %>
       </div>
     </div>
