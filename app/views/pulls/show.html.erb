@@ -18,15 +18,19 @@
         <p><b>Description : </b><%= @pull.description %></p>
       </div>
       <div class="description m-3">
-        <p><b>Prix : </b><%= '%.2f' % @pull.price.round %> € par jour</p>
+        <p><b>Prix : </b><%= sprintf('%.2f', @pull.price) %> € par jour</p>
       </div>
       <%# form avec prix pour les dates de réservation e%>
       <% if user_signed_in? %>
         <div class="form-show">
-          <%= simple_form_for [@pull, @booking] do |f| %>
-            <%= f.input :start_date, html5: true, label: 'Début de la location' %>
-            <%= f.input :end_date, html5: true, label: 'Fin de la location' %>
-            <div class= "d-flex justify-content-end" style="margin-top:2rem;"><%= f.submit 'Confirmer ma réservation', class: "btn-grey btn"%></div>
+          <%= simple_form_for [@pull, @booking], data: { controller: 'price' } do |f| %>
+            <%= f.input :start_date, html5: true, label: 'Début de la location', input_html: {data: { price_target: 'start', action: 'change->price#calcPrice'}} %>
+            <%= f.input :end_date, html5: true, label: 'Fin de la location', input_html: {data: { price_target: 'end', action: 'change->price#calcPrice'}} %>
+            <%= f.hidden_field :price, value: sprintf('%.2f', @pull.price), data: { price_target: 'unit' } %>
+            <div class= "d-flex flex-column justify-content-between align-items-center" style="margin-top:2rem;">
+              <div class="h4 mb-4" data-price-target="price">Total : 0€</div>
+              <%= f.submit 'Confirmer ma réservation', class: "btn-grey btn"%>
+            </div>
           <% end %>
         </div>
       <% else %>
