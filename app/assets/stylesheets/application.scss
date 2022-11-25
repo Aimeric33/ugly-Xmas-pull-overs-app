@@ -20,6 +20,9 @@ body {
   position: relative;
   min-height: 100vh;
   padding-bottom: 40px;
+  .banner {
+    background-position: cover;
+  }
 }
 
 body::after {
