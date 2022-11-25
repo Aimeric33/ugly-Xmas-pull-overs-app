@@ -18,7 +18,7 @@
             <h2><%= pull.title %></h2>
             <p><%= pull.description %></p>
             <div style="margin:6% auto">
-              <%= link_to "#{pull.price.round} € jour", pull_path(pull), class: "btn-green", style: "color:white;" %>
+              <%= link_to "#{pull.price.round} € / jour", pull_path(pull), class: "btn-green", style: "color:white;" %>
             </div>
           </div>
         <% end %>
