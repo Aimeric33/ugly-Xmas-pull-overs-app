@@ -86,3 +86,22 @@
     padding: 40px;
   }
 }
+
+.card-stats {
+  overflow: hidden;
+  background: $back-color;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  border: 2px solid black;
+  margin: 10px 10px;
+  color: $font-color;
+  position: sticky;
+  top: 20px;
+}
+
+.card-stats .list-group-item-success, .card-stats .list-group-item-danger {
+  font-weight: bold;
+}

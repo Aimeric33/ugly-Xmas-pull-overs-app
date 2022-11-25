@@ -8,7 +8,7 @@
           <%= f.input :description, label: "Ajoute des détails sur ton pull", placeholder: 'Décrivez à quel point votre pull est fantastique 😛', as: :text, input_html: {rows: 5, cols: 10} %>
           <%= f.input :size, label: "Taille de ton pull", as: :radio_buttons, :collection => Pull::SIZES, wrapper: :vertical_collection_inline %>
           <%= f.input :price, label: "Prix par jour de location", placeholder: 'Prix de location de votre superbe pull 🤑. Example : "5", "10", "32"' %>
-          <%= f.submit "Créer mon pull !", class: 'btn btn-grey' %>
+          <%= f.submit "Valider", class: 'btn btn-grey' %>
         <% end %>
       </div>
     </div>
