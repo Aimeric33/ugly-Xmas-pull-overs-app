@@ -1,18 +1,30 @@
 <div class="container mt-5">
-  <h1 class="text-center title">Mes ventes</h1>
+  <h1 class="text-center title-green">Mes ventes</h1>
   <div class="container">
-    <div class="cards">
-      <% @bookings.each do |booking| %>
-        <div class="card-product">
-          <%= cl_image_tag booking.pull.photo.key, height: 300, width: 400, crop: :pad %>
-          <div class="card-product-infos">
-            <h2><%= link_to booking.pull.title, pull_path(booking.pull) %></h2>
-            <p>Réservé du <%= booking.start_date %> au <%= booking.end_date %></p>
-            <p>Votre pull a été loué <b><%= (booking.end_date - booking.start_date).to_i %></b> jours à <%= booking.pull.price %>€ par jour</p>
-            <h5 style="color:green">Vous avez gagné <%= Booking.amount(booking) %>€!</h5>
+    <div class="row">
+      <div class="cards col-sm-9">
+        <% @bookings.each do |booking| %>
+          <div class="card-product">
+            <%= cl_image_tag booking.pull.photo.key, height: 300, width: 400, crop: :pad %>
+            <div class="card-product-infos">
+              <h2><%= link_to booking.pull.title, pull_path(booking.pull) %></h2>
+              <p>Réservé du <%= booking.start_date %> au <%= booking.end_date %></p>
+              <p>Votre pull a été loué <b><%= (booking.end_date - booking.start_date).to_i %></b> jours à <%= booking.pull.price %>€ par jour</p>
+              <h5 style="color:green">Vous avez gagné <%= Booking.amount_of_one(booking) %>€!</h5>
+            </div>
           </div>
+        <% end %>
+      </div>
+
+      <div class="col-sm-3">
+        <div class="card-stats p-3">
+          <h5>Statistiques</h5>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><%= pluralize @bookings.count, "location" %> sur tes pulls</li>
+            <li class="list-group-item list-group-item-success"><%= Booking.amount_all(@bookings) %>€ gagnés avec tes pulls</li>
+          </ul>
         </div>
-      <% end %>
+      </div>
     </div>
   </div>
 </div>
