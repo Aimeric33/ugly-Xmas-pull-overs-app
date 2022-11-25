@@ -17,7 +17,9 @@
           <div class="card-product-infos">
             <h2><%= pull.title %></h2>
             <p><%= pull.description %></p>
-            <p style="font-size:16px;"><span style="font-weight:bold; font-size:19px;"><%= pull.price.round %> €</span> / jour</p>
+            <div style="margin:6% auto">
+              <%= link_to "#{pull.price.round} € jour", pull_path(pull), class: "btn-green", style: "color:white;" %>
+            </div>
           </div>
         <% end %>
       </div>

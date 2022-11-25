@@ -20,6 +20,16 @@
   border: 2px solid black;
 }
 
+.btn-green {
+  color: #EFF5F5;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #104B29;
+  transition: 0.5s ease;
+  text-decoration: none;
+  box-shadow: 2px 2px 2px #dddddd;
+}
+
 .btn-booking {
   margin-top: 4rem;
   font-weight: 700;
@@ -33,6 +43,11 @@
   background: #EFF5F5;
   color: #104B29;
   border: 2px solid #104B29;
+}
+
+.btn-green:hover{
+  background: #dc0202;
+  color: #000000;
 }
 
 .btn-red:hover{
